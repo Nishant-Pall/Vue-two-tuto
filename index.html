@@ -19,6 +19,14 @@
             <h1>{{greet()}}</h1>
             <h1>Name: {{name}}</h1>
             <h1>Job: {{job}}</h1>
+            <!-- v-bind is a directive to bind the attribute href to dynamic data -->
+            <!-- can use :href instead of v-bind:href as a shorthand -->
+            <a :href="website">WEBSITE</a>
+            <p v-html="websiteTag"></p>
+            <input
+                type="text"
+                :value="name"
+            />
         </div>
         <script src="app.js"></script>
     </body>
