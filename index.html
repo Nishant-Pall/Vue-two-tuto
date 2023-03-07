@@ -13,7 +13,6 @@
         />
         <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
     </head>
-
     <body>
         <div id="vue-app">
             <h1>{{greet()}}</h1>
@@ -27,6 +26,17 @@
                 type="text"
                 :value="name"
             />
+            <button @:click="add()">++</button>
+            <button v-on:click="subtract(1)">--</button>
+            <button @:dblclick="add(10)">Add 10</button>
+            <button v-on:dblclick="subtract(10)">Subtract 10</button>
+            <p>My age is {{age}}</p>
+            <div
+                id="canvas"
+                v-on:mousemove="calcPos"
+            >
+                {{x}}, {{y}}
+            </div>
         </div>
         <script src="app.js"></script>
     </body>
