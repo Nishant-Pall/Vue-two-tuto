@@ -4,3 +4,17 @@
     text-align: center;
     border: 1px solid #333;
 }
+
+.available {
+    background-color: red;
+    border: solid 2px;
+}
+
+.available h1 {
+    color: green;
+}
+
+.nearby h1:after {
+    content: "nearby";
+    margin-left: 10px;
+}
