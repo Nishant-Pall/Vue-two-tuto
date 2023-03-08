@@ -53,6 +53,14 @@
                 v-model="name"
             />
             {{name}}
+            <div>
+                <button v-on:click="A++">Add to A</button>
+                <button v-on:click="B++">Add to B</button>
+                <p>A - {{A}}</p>
+                <p>B - {{B}}</p>
+                <p>Age + A == {{addToA}}</p>
+                <p>Age + B == {{addToB}}</p>
+            </div>
         </div>
         <script src="app.js"></script>
     </body>
