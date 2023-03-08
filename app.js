@@ -26,6 +26,9 @@ new Vue({
 		},
 		click: function () {
 			console.log('you clicked');
+		},
+		logValue: function () {
+			console.log('You pressed a key or..whatevs');
 		}
 	}
 });

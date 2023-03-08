@@ -43,6 +43,11 @@
             >
                 {{x}}, {{y}}
             </div>
+            <!-- chaining modifiers -->
+            <input
+                type="text"
+                v-on:keyup.alt.enter="logValue"
+            />
         </div>
         <script src="app.js"></script>
     </body>
