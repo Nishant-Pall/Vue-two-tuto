@@ -23,6 +23,9 @@ new Vue({
 		calcPos: function (event) {
 			this.x = event.offsetX;
 			this.y = event.offsetY;
+		},
+		click: function () {
+			console.log('you clicked');
 		}
 	}
 });

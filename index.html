@@ -21,14 +21,20 @@
             <!-- v-bind is a directive to bind the attribute href to dynamic data -->
             <!-- can use :href instead of v-bind:href as a shorthand -->
             <a :href="website">WEBSITE</a>
+            <a
+                v-on:click.prevent="click"
+                v-bind:href="website"
+                >WEBSITE 2nd version</a
+            >
             <p v-html="websiteTag"></p>
             <input
                 type="text"
                 :value="name"
             />
-            <button @:click="add()">++</button>
+            <!-- .once modifier will make the event run only once -->
+            <button @click.once="add(1)">++</button>
             <button v-on:click="subtract(1)">--</button>
-            <button @:dblclick="add(10)">Add 10</button>
+            <button @dblclick="add(10)">Add 10</button>
             <button v-on:dblclick="subtract(10)">Subtract 10</button>
             <p>My age is {{age}}</p>
             <div
