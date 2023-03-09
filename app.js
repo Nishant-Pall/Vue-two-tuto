@@ -12,7 +12,9 @@ new Vue({
 		A: 0,
 		B: 0,
 		available: true,
-		nearby: true
+		nearby: true,
+		success: false,
+		error: false
 	},
 	methods: {
 		greet: function () {

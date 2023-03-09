@@ -78,6 +78,20 @@
             <div v-bind:class="compClasses">
                 <h1>TEXT</h1>
             </div>
+            <div>
+                <button v-on:click="error = !error">Toggle Error</button>
+                <button v-on:click="success = !success">Toggle Sucess</button>
+                <!-- if error is false then only else if will run, v-show is like v-if but it just sets display none
+                whereas v-if removes the element from the DOM-->
+                <p v-if="error">ERROR</p>
+                <p v-else-if="success">SUCCESS</p>
+                <button v-on:click="error = !error">Toggle SHOW Error</button>
+                <button v-on:click="success = !success">
+                    Toggle SHOW Sucess
+                </button>
+                <p v-show="error">ERROR</p>
+                <p v-show="success">SUCCESS</p>
+            </div>
         </div>
         <script src="app.js"></script>
     </body>
