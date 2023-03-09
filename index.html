@@ -21,15 +21,18 @@
             <!-- v-bind is a directive to bind the attribute href to dynamic data -->
             <!-- can use :href instead of v-bind:href as a shorthand -->
             <a :href="website">WEBSITE</a>
+            <!-- .prevent modifier to prevent default behaviour, if we click on link website will not open, only log will generate -->
             <a
                 v-on:click.prevent="click"
                 v-bind:href="website"
-                >WEBSITE 2nd version</a
             >
+                WEBSITE 2nd version
+            </a>
+            <!-- insert html inside tag using v-html -->
             <p v-html="websiteTag"></p>
             <input
                 type="text"
-                :value="name"
+                v-bind:value="name"
             />
             <!-- .once modifier will make the event run only once -->
             <button @click.once="add(1)">++</button>
@@ -61,6 +64,7 @@
                 <p>Age + A == {{addToA}}</p>
                 <p>Age + B == {{addToB}}</p>
             </div>
+            <!-- bind class values using {}, class: true or class:false -->
             <div
                 v-on:click="available = !available"
                 v-bind:class="{available:available}"
