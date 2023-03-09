@@ -95,6 +95,24 @@
                 <p v-show="error">ERROR</p>
                 <p v-show="success">SUCCESS</p>
             </div>
+            <div>
+                <h3>Looping over data</h3>
+                <ul>
+                    <!-- can loop over any element and it will be inserted into the DOM -->
+                    <li v-for="character in characters">{{character}}</li>
+                    <li v-for="(ninja,index) in ninjas">
+                        {{index}} -- Name: {{ninja.name}} -- Age: {{ninja.age}}
+                    </li>
+                </ul>
+                <!-- templates dont get inserted, in the DOM it will be a list of p tags only -->
+                <template v-for="(character,index) in characters">
+                    <p>{{index}} -- {{character}}</p>
+                </template>
+                <!-- cycling over objects -->
+                <template v-for="ninja in ninjas">
+                    <div v-for="(val,key) in ninja">{{key}} -- {{val}}</div>
+                </template>
+            </div>
         </div>
         <script src="app.js"></script>
     </body>
