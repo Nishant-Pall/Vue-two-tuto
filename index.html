@@ -56,6 +56,7 @@
                 v-model="name"
             />
             {{name}}
+            <h3>Computed</h3>
             <div>
                 <button v-on:click="A++">Add to A</button>
                 <button v-on:click="B++">Add to B</button>
@@ -64,6 +65,7 @@
                 <p>Age + A == {{addToA}}</p>
                 <p>Age + B == {{addToB}}</p>
             </div>
+            <h3>Bind and toggle classes</h3>
             <!-- bind class values using {}, class: true or class:false -->
             <div
                 v-on:click="available = !available"
@@ -79,6 +81,7 @@
                 <h1>TEXT</h1>
             </div>
             <div>
+                <h3>Conditionals</h3>
                 <button v-on:click="error = !error">Toggle Error</button>
                 <button v-on:click="success = !success">Toggle Sucess</button>
                 <!-- if error is false then only else if will run, v-show is like v-if but it just sets display none
