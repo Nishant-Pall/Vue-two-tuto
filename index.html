@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        />
+        <title>Vue</title>
+        <link
+            href="styles.css"
+            rel="stylesheet"
+        />
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="vue-app-one">
+            <p>{{title}}</p>
+            <p>{{greet}}</p>
+            <greeting> </greeting>
+        </div>
+
+        <div id="vue-app-two">
+            <p>{{title}}</p>
+            <p>{{greet}}</p>
+            <greeting></greeting>
+            <button v-on:click="changeTitle">change title of 1</button>
+        </div>
+        <script src="app.js"></script>
+    </body>
+</html>
