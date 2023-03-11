@@ -1,7 +1,7 @@
 <template>
   <div>
     <app-header></app-header>
-    <ninjas></ninjas>
+    <app-ninjas v-bind:ninjas="ninjas"></app-ninjas>
     <app-footer></app-footer>
   </div>
 </template>
@@ -13,13 +13,21 @@ import Footer from "./components/Footer.vue";
 
 export default {
   components: {
-    ninjas: Ninjas,
+    "app-ninjas": Ninjas,
     "app-header": Header,
     "app-footer": Footer,
   },
   data() {
     return {
       title: "Ninja app",
+      ninjas: [
+        { name: "Yoshi", speciality: "HTML", show: false },
+        { name: "Mario", speciality: "JS", show: false },
+        { name: "Ryuk", speciality: "CSS", show: false },
+        { name: "Luigi", speciality: "Webpack", show: false },
+        { name: "Luigi", speciality: "Webpack", show: false },
+        { name: "Luigi", speciality: "Webpack", show: false },
+      ],
     };
   },
 };

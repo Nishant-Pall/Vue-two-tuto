@@ -16,17 +16,16 @@
 
 <script>
 export default {
+  // props: ["ninjas"],
+  // we can add type checking on props, as well as required param
+  props: {
+    ninjas: {
+      type: Array,
+      required: true,
+    },
+  },
   data() {
-    return {
-      ninjas: [
-        { name: "Yoshi", speciality: "HTML", show: false },
-        { name: "Mario", speciality: "JS", show: false },
-        { name: "Ryuk", speciality: "CSS", show: false },
-        { name: "Luigi", speciality: "Webpack", show: false },
-        { name: "Luigi", speciality: "Webpack", show: false },
-        { name: "Luigi", speciality: "Webpack", show: false },
-      ],
-    };
+    return {};
   },
 };
 </script>
