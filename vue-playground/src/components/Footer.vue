@@ -6,10 +6,13 @@
 </template>
 <script>
 export default {
+    props: {
+        title: {
+            type: String,
+        },
+    },
     data() {
-        return {
-            title: "COPYRIGHT",
-        };
+        return {};
     },
 };
 </script>
