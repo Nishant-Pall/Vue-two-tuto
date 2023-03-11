@@ -33,23 +33,24 @@ export default {
 
 <style scoped>
 #ninjas {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 ul {
   display: flex;
-  list-style-type: none;
   flex-wrap: wrap;
+  list-style-type: none;
   padding: 0;
 }
 li {
   flex-grow: 1;
-  flex-basis: 200px;
+  flex-basis: 300px;
   text-align: center;
   padding: 30px;
-  border: solid 2px black;
+  border: 1px solid #222;
   margin: 10px;
 }
 h1 {
