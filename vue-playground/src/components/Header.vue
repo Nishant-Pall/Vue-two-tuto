@@ -7,6 +7,8 @@
 
 
 <script>
+import { bus } from "../main";
+
 export default {
 	props: {
 		title: {
@@ -18,9 +20,13 @@ export default {
 	},
 	methods: {
 		changeTitle: function () {
-			// this.title = "Vue Wizards";
 			// emitting event named changeTitle and we're sending the value Vue Wizards
-			this.$emit("changeTitle", "Vue Wizards");
+			// this.$emit("changeTitle", "Vue Wizards");
+			// instead of sending new title through parent, we can create a bus and
+			// listen to the event in sibling/unrelated components directly by emitting it from here
+			// also pass in some data
+			this.title = "Vue Wizards";
+			bus.$emit("titleChanged", "Vue Wizards");
 		},
 	},
 };
