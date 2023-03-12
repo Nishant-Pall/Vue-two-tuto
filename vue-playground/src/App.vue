@@ -14,6 +14,18 @@
 			<p slot="footer">Ninja slot footer</p>
 		</app-ninjas>
 		<app-footer v-bind:title="title"></app-footer>
+		<!-- dynamic component that shows either header or footer on button click -->
+		<!-- component value changes on button click -->
+		<!-- when we switch to another component, the existing component is destroyed and replaced -->
+		<!-- therefore all the state gets reset -->
+		<!-- so when we go back we get a new instance -->
+		<!-- to keep the component alive we use the keep-alive tag -->
+		<!-- When wrapped around a dynamic component, caches the inactive component instances without destroying them. -->
+		<keep-alive>
+			<component v-bind:is="component"></component>
+		</keep-alive>
+		<button v-on:click="component = 'app-header'">SHOW HEADER</button>
+		<button v-on:click="component = 'app-footer'">SHOW FOOTER</button>
 	</div>
 </template>
 
@@ -32,6 +44,7 @@ export default {
 		return {
 			title: "Vue Ninjas",
 			slotTitle: "NINJA SLOT TITLE",
+			component: "app-header",
 			ninjas: [
 				{ name: "Yoshi", speciality: "HTML", show: false },
 				{ name: "Mario", speciality: "JS", show: false },
