@@ -1,9 +1,26 @@
-<template lang="">
-    <div>
-    </div>
+<template>
+	<div>
+		<add-blog></add-blog>
+	</div>
 </template>
+
 <script>
-export default {};
-</script>
-<style lang="">
+import addBlog from "./components/addBlog.vue";
+
+export default {
+	components: {
+		"add-blog": addBlog,
+	},
+	data() {
+		return {};
+	},
+	methods: {},
+};
+</script >
+
+<style scoped>
+body {
+	margin: 0;
+	font-family: "Nunito Semibold";
+}
 </style>
