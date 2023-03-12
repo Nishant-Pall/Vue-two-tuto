@@ -1,5 +1,6 @@
 <template>
 	<div id="ninjas">
+		<slot name="title"></slot>
 		<h1>LIST OF NINJAS</h1>
 		<ul>
 			<li
@@ -11,6 +12,7 @@
 				<h3 v-show="ninja.show">{{ ninja.speciality }}</h3>
 			</li>
 		</ul>
+		<slot name="footer"></slot>
 	</div>
 </template>
 
