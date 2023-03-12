@@ -27,6 +27,31 @@ export default {
 	data() {
 		return {};
 	},
+	// lifecycle hooks
+	// before component has been created
+	beforeCreate() {
+		alert("beforeCreate");
+	},
+	// after component has been created
+	created() {
+		alert("created");
+	},
+	// before component has been mounted to the dom
+	beforeMount() {
+		alert("beforeMount");
+	},
+	// after component has been mounted to the dom
+	mounted() {
+		alert("mounted");
+	},
+	// called before change is updated
+	beforeUpdate() {
+		alert("beforeUpdate");
+	},
+	// occurs after dom has been updated and re-rendered
+	updated() {
+		alert("updated");
+	},
 };
 </script>
 
