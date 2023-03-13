@@ -1,7 +1,7 @@
 <template>
 	<div id="add-blog">
 		<h2>Add a new blog post</h2>
-		<form>
+		<form v-if="!submitted">
 			<label>Blog Title:</label>
 			<input type="text" required v-model="blog.title" />
 			<label>Blog Content:</label>
@@ -31,6 +31,7 @@
 					value="cheese"
 					v-model="blog.categories"
 				/>
+				<button v-on:click.prevent="post">Add blog</button>
 			</div>
 			<div id="selectbox">
 				<select v-model="blog.author">
@@ -43,6 +44,9 @@
 				</select>
 			</div>
 		</form>
+		<div v-if="submitted">
+			<h3>Thanks for adding your post</h3>
+		</div>
 		<div id="preview">
 			<h3>Preview Blog</h3>
 			<p>Blog Title: {{ blog.title }}</p>
@@ -65,6 +69,8 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
 	data() {
 		return {
@@ -75,7 +81,21 @@ export default {
 				author: "",
 			},
 			authors: ["Mario", "Luigi", "Ryuk", "Yoshi"],
+			submitted: false,
 		};
+	},
+	methods: {
+		post: function () {
+			axios
+				.post("#", {
+					blog: this.blog,
+				})
+				.then((data) => {
+					console.log(data);
+					this.submitted = true;
+				})
+				.catch((err) => console.log(err));
+		},
 	},
 };
 </script>
