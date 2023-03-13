@@ -2,15 +2,15 @@ import Vue from "vue";
 import App from "./App.vue";
 
 // Custom directives
-Vue.directive("rainbow", {
-	// bind hook for directive is ran the moment it is binded to an element
-	// el --> element
-	// binding --> refers to the value of the directive in the element, binding.value to get the value
-	// vnode --> element in virtual dom
-	bind(el, binding, vnode) {
-		el.style.color = `# ${Math.random().toString().slice(2, 8)}`;
-	},
-});
+// Vue.directive("rainbow", {
+// 	// bind hook for directive is ran the moment it is binded to an element
+// 	// el --> element
+// 	// binding --> refers to the value of the directive in the element, binding.value to get the value
+// 	// vnode --> element in virtual dom
+// 	bind(el, binding, vnode) {
+// 		el.style.color = `# ${Math.random().toString().slice(2, 8)}`;
+// 	},
+// });
 
 Vue.directive("theme", {
 	bind(el, binding, vnode) {
@@ -29,14 +29,14 @@ Vue.directive("theme", {
 
 // Custom filters
 // value refers to data we filtered on
-Vue.filter('uppercase', (value) => {
-	// return value.toUpperCase();
-}
-);
+// Vue.filter('uppercase', (value) => {
+// 	// return value.toUpperCase();
+// }
+// );
 
-Vue.filter('snippet', (value) => {
-	// return `${value.slice(0, 100)} + ...`;
-});
+// Vue.filter('snippet', (value) => {
+// 	// return `${value.slice(0, 100)} + ...`;
+// });
 
 new Vue({
 	el: "#app",
