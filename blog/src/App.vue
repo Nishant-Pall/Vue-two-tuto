@@ -21,6 +21,6 @@ export default {
 <style scoped>
 body {
 	margin: 0;
-	font-family: "Nunito Semibold";
+	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 </style>
