@@ -3,7 +3,15 @@
 	<!-- can put arguments as well after ':', eg column -->
 	<div v-theme:column="'wide'" id="show-blogs">
 		<h1>All Blogs</h1>
-		<div class="single-blog"></div>
+		<div
+			v-for="(blog, index) in blogs"
+			v-bind:key="index"
+			class="single-blog"
+		>
+			<!-- to-uppercase is a custom filter we create -->
+			<h2>{{ blog.title | uppercase }}</h2>
+			<article>{{ blog.body | snippet }}</article>
+		</div>
 	</div>
 </template>
 <script>
