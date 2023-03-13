@@ -32,6 +32,16 @@
 					v-model="blog.categories"
 				/>
 			</div>
+			<div id="selectbox">
+				<select v-model="blog.author">
+					<option
+						v-for="(author, index) in authors"
+						v-bind:key="index"
+					>
+						{{ author }}
+					</option>
+				</select>
+			</div>
 		</form>
 		<div id="preview">
 			<h3>Preview Blog</h3>
@@ -49,6 +59,7 @@
 					{{ category }}
 				</li>
 			</ul>
+			<p>Blog Author: {{ blog.author }}</p>
 		</div>
 	</div>
 </template>
@@ -61,7 +72,9 @@ export default {
 				title: "",
 				content: "",
 				categories: [],
+				author: "",
 			},
+			authors: ["Mario", "Luigi", "Ryuk", "Yoshi"],
 		};
 	},
 };
