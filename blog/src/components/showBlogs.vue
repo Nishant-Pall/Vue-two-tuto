@@ -1,5 +1,7 @@
 <template >
-	<div id="show-blogs">
+	<!-- custom directive values are to be passed in '' -->
+	<!-- can put arguments as well after ':', eg column -->
+	<div v-theme:column="'wide'" id="show-blogs">
 		<h1>All Blogs</h1>
 		<div class="single-blog"></div>
 	</div>
