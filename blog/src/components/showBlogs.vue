@@ -16,10 +16,10 @@
 			class="single-blog"
 		>
 			<!-- toUppercase is a custom filter we create, either globally or locally -->
-			<router-link v-rainbow v-bind:to="`/blog/${blog.id}`">
-				<h2>{{ blog.title | toUppercase }}</h2>
+			<router-link v-rainbow v-bind:to="`blog/${blog.id}`">
+				<h2>{{ blog.blog.title | toUppercase }}</h2>
 			</router-link>
-			<article>{{ blog.body | snippet }}</article>
+			<article>{{ blog.blog.content | snippet }}</article>
 		</div>
 	</div>
 </template>
@@ -37,9 +37,16 @@ export default {
 	methods: {},
 	created() {
 		axios
-			.get("https://jsonplaceholder.typicode.com/posts")
+			.get(
+				"https://vue-blog-e6468-default-rtdb.asia-southeast1.firebasedatabase.app/posts.json"
+			)
 			.then((data) => {
-				this.blogs = data.data.slice(0, 10);
+				const blogsArray = [];
+				for (let key in data.data) {
+					data.data[key].id = key;
+					blogsArray.push(data.data[key]);
+				}
+				this.blogs = blogsArray;
 			})
 			.catch((err) => console.log(err));
 	},
@@ -50,7 +57,7 @@ export default {
 			return value.toUpperCase();
 		},
 		snippet(value) {
-			return `${value.slice(0, 100)} + ...`;
+			return `${value.slice(0, 100)}  ...`;
 		},
 	},
 	directives: {

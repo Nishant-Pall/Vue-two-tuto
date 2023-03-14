@@ -1,7 +1,13 @@
 <template>
 	<div id="single-blog">
 		<h1>{{ blog.title }}</h1>
-		<article>{{ blog.body }}</article>
+		<article>{{ blog.content }}</article>
+		<p>Author: {{ blog.author }}</p>
+		<ul>
+			<li v-for="category in blog.categories" :key="category">
+				{{ category }}
+			</li>
+		</ul>
 	</div>
 </template>
 <script>
@@ -16,9 +22,11 @@ export default {
 	},
 	created() {
 		axios
-			.get(`https://jsonplaceholder.typicode.com/posts/${this.id}`)
+			.get(
+				`https://vue-blog-e6468-default-rtdb.asia-southeast1.firebasedatabase.app/posts/${this.id}/.json`
+			)
 			.then((data) => {
-				this.blog = data.data;
+				this.blog = data.data.blog;
 			})
 			.catch((err) => console.log(err));
 	},

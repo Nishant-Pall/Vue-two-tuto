@@ -2,9 +2,6 @@
 	<div>
 		<app-header></app-header>
 		<router-view></router-view>
-		<!-- <add-blog></add-blog> -->
-		<!-- <show-blogs></show-blogs> -->
-		<!-- <list-blogs></list-blogs> -->
 	</div>
 </template>
 
@@ -28,7 +25,7 @@ export default {
 	},
 	methods: {},
 };
-</script >
+</script>
 
 <style scoped>
 body {

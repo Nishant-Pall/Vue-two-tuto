@@ -28,9 +28,12 @@ export default {
 	methods: {},
 	created() {
 		axios
-			.get("https://jsonplaceholder.typicode.com/posts")
+			.get(
+				"https://vue-blog-e6468-default-rtdb.asia-southeast1.firebasedatabase.app/posts.json"
+			)
 			.then((data) => {
-				this.blogs = data.body.slice(0, 10);
+				console.log(data);
+				// this.blogs = data.body.slice(0, 10);
 			})
 			.catch((err) => console.log(err));
 	},

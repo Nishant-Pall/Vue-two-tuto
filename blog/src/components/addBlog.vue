@@ -85,13 +85,15 @@ export default {
 		};
 	},
 	methods: {
-		post: function () {
+		post: function() {
 			axios
-				.post("#", {
-					blog: this.blog,
-				})
+				.post(
+					"https://vue-blog-e6468-default-rtdb.asia-southeast1.firebasedatabase.app/posts.json",
+					{
+						blog: this.blog,
+					}
+				)
 				.then((data) => {
-					console.log(data);
 					this.submitted = true;
 				})
 				.catch((err) => console.log(err));
