@@ -51,6 +51,19 @@ export default {
 				el.style.color = `# ${Math.random().toString().slice(2, 8)}`;
 			},
 		},
+		theme: {
+			bind(el, binding, vnode) {
+				if (binding.value === "wide") {
+					el.style.maxWidth = "1200px";
+				} else if (binding.value === "narrow") {
+					el.style.maxWidth = "560px";
+				}
+				if (binding.arg === "column") {
+					el.style.backgroundColor = "#ddd";
+					el.padding = "20px";
+				}
+			},
+		},
 	},
 	// create mixin from imported mixin file
 	mixins: [searchMixin],
