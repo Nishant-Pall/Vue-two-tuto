@@ -10,7 +10,9 @@
 			class="single-blog"
 		>
 			<!-- toUppercase is a custom filter we create, either globally or locally -->
-			<h2 v-rainbow>{{ blog.title | toUppercase }}</h2>
+			<router-link v-bind:to="`/blog/${blog.id}`">
+				<h2 v-rainbow>{{ blog.title | toUppercase }}</h2>
+			</router-link>
 			<article>{{ blog.body | snippet }}</article>
 		</div>
 	</div>
