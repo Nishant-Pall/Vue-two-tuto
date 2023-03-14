@@ -1,4 +1,4 @@
-<template >
+<template>
 	<!-- custom directive values are to be passed in '' -->
 	<!-- can put arguments as well after ':', eg column -->
 	<div id="list-blogs">
