@@ -1,8 +1,8 @@
 <template >
 	<!-- custom directive values are to be passed in '' -->
 	<!-- can put arguments as well after ':', eg column -->
-	<div v-theme:column="'wide'" id="show-blogs">
-		<h1>All Blogs</h1>
+	<div id="list-blogs">
+		<h1>List Blog Titles</h1>
 		<input type="text" v-model="search" placeholder="search for blogs" />
 		<div
 			v-for="(blog, index) in filteredBlogs"
@@ -10,8 +10,7 @@
 			class="single-blog"
 		>
 			<!-- toUppercase is a custom filter we create, either globally or locally -->
-			<h2 v-rainbow>{{ blog.title | toUppercase }}</h2>
-			<article>{{ blog.body | snippet }}</article>
+			<h2 v-rainbow>{{ blog.title }}</h2>
 		</div>
 	</div>
 </template>
@@ -36,28 +35,11 @@ export default {
 			.catch((err) => console.log(err));
 	},
 	computed: {},
-	// defining filters locally
-	filters: {
-		toUppercase(value) {
-			// return value.toUpperCase();
-		},
-		snippet(value) {
-			// return `${value.slice(0, 100)} + ...`;
-		},
-	},
-	directives: {
-		rainbow: {
-			bind(el, binding, vnode) {
-				el.style.color = `# ${Math.random().toString().slice(2, 8)}`;
-			},
-		},
-	},
-	// create mixin from imported mixin file
 	mixins: [searchMixin],
 };
 </script>
 <style scoped>
-#show-blogs {
+#list-blogs {
 	max-width: 800px;
 	margin: 0 auto;
 }
