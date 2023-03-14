@@ -28,7 +28,7 @@ export default {
 	methods: {},
 	created() {
 		axios
-			.get("#")
+			.get("https://jsonplaceholder.typicode.com/posts")
 			.then((data) => {
 				this.blogs = data.body.slice(0, 10);
 			})

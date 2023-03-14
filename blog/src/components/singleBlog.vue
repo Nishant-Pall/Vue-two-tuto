@@ -16,9 +16,9 @@ export default {
 	},
 	created() {
 		axios
-			.get(`#/${id}`)
+			.get(`https://jsonplaceholder.typicode.com/posts/${this.id}`)
 			.then((data) => {
-				this.blog = data.dboy;
+				this.blog = data.data;
 			})
 			.catch((err) => console.log(err));
 	},
